@@ -94,7 +94,7 @@ public class WheelView extends View {
     int change;
 
     // 绘制几个条目，实际上第一项和最后一项Y轴压缩成0%了，所以可见的数目实际为9
-    int itemsVisible = 11;
+    int itemsVisible = 7;
 
     int measuredHeight;// WheelView 控件高度
     int measuredWidth;// WheelView 控件宽度
@@ -157,7 +157,7 @@ public class WheelView extends View {
             a.recycle();//回收内存
         }
 
-        judgeLineSpace();
+        judgeLineSpae();
 
         initLoopView(context);
     }
@@ -165,12 +165,13 @@ public class WheelView extends View {
     /**
      * 判断间距是否在1.0-2.0之间
      */
-    private void judgeLineSpace() {
+    private void judgeLineSpae() {
 //        if (lineSpacingMultiplier < 1.2f) {
 //            lineSpacingMultiplier = 1.2f;
 //        } else if (lineSpacingMultiplier > 2.0f) {
 //            lineSpacingMultiplier = 2.0f;
 //        }
+//        lineSpacingMultiplier
     }
 
     private void initLoopView(Context context) {
@@ -768,7 +769,7 @@ public class WheelView extends View {
 
 
             this.lineSpacingMultiplier = lineSpacingMultiplier;
-            judgeLineSpace();
+            judgeLineSpae();
 
         }
     }
