@@ -9,12 +9,22 @@ import com.bigkoo.pickerview.model.IPickerViewData;
  */
 
 public class CardBean implements IPickerViewData {
+    boolean isDiscount;
     int id;
     String cardNo;
 
-    public CardBean(int id, String cardNo) {
+    public CardBean(boolean isDiscount, int id, String cardNo) {
+        this.isDiscount = isDiscount;
         this.id = id;
         this.cardNo = cardNo;
+    }
+
+    public boolean isDiscount() {
+        return isDiscount;
+    }
+
+    public void setDiscount(boolean discount) {
+        isDiscount = discount;
     }
 
     public int getId() {
@@ -38,5 +48,9 @@ public class CardBean implements IPickerViewData {
         return cardNo;
     }
 
+    @Override
+    public boolean getPickerViewIsShowImage() {
+        return isDiscount;
+    }
 }
 

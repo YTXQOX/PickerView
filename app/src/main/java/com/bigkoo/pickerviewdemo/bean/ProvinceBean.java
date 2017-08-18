@@ -55,4 +55,9 @@ public class ProvinceBean implements IPickerViewData {
     public String getPickerViewText() {
         return name;
     }
+
+    @Override
+    public boolean getPickerViewIsShowImage() {
+        return false;
+    }
 }

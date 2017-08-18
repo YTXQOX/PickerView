@@ -46,6 +46,10 @@ public class JsonBean  implements IPickerViewData{
         return this.name;
     }
 
+    @Override
+    public boolean getPickerViewIsShowImage() {
+        return false;
+    }
 
 
     public static class CityBean {
