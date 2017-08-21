@@ -495,7 +495,7 @@ public class WheelView extends View {
                         Matrix matrix = new Matrix();
                         matrix.postScale(0.5f, 0.5f);
                         Bitmap bmp = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
-                        canvas.drawBitmap(bmp, drawCenterContentStart + width + 20, 0, paintCenterText);
+                        canvas.drawBitmap(bmp, drawCenterContentStart + width + 40, 0, paintCenterText);
                     }
 
                     canvas.restore();
@@ -518,7 +518,7 @@ public class WheelView extends View {
                         Matrix matrix = new Matrix();
                         matrix.postScale(0.5f, 0.5f);
                         Bitmap bmp = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
-                        canvas.drawBitmap(bmp, drawCenterContentStart + width + 20, 0, paintCenterText);
+                        canvas.drawBitmap(bmp, drawCenterContentStart + width + 40, 0, paintCenterText);
                     }
 
                     canvas.restore();
@@ -536,7 +536,7 @@ public class WheelView extends View {
                         Matrix matrix = new Matrix();
                         matrix.postScale(0.5f, 0.5f);
                         Bitmap bmp = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
-                        canvas.drawBitmap(bmp, drawCenterContentStart + width + 20, 0, paintCenterText);
+                        canvas.drawBitmap(bmp, drawCenterContentStart + width + 40, 0, paintCenterText);
                     }
 
                     int preSelectedItem = adapter.indexOf(visibles[counter]);
@@ -556,7 +556,7 @@ public class WheelView extends View {
                             BitmapDrawable bmpDraw = (BitmapDrawable) getResources().getDrawable(R.mipmap.ic_discount);
                             Bitmap bitmap = bmpDraw.getBitmap();
                             Matrix matrix = new Matrix();
-                            matrix.postScale(0.6f, 0.6f);
+                            matrix.postScale(0.5f, 0.5f);
                             Bitmap bmp = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
                             canvas.drawBitmap(bmp, drawOutContentStart + width + 20, 0, paintCenterText);
                         }
