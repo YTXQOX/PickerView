@@ -488,7 +488,7 @@ public class WheelView extends View {
 
                     if (contentIsShowImage) {
                         paintCenterText.setColor(this.textColorCenterIsDiscount);
-                    } else  {
+                    } else {
                         paintCenterText.setColor(this.textColorCenter);
                     }
                     canvas.drawText(contentText, drawCenterContentStart, maxTextHeight - CENTERCONTENTOFFSET, paintCenterText);
@@ -517,7 +517,7 @@ public class WheelView extends View {
 
                     if (contentIsShowImage) {
                         paintCenterText.setColor(this.textColorCenterIsDiscount);
-                    } else  {
+                    } else {
                         paintCenterText.setColor(this.textColorCenter);
                     }
                     canvas.drawText(contentText, drawOutContentStart, maxTextHeight, paintOuterText);
@@ -541,7 +541,7 @@ public class WheelView extends View {
 
                     if (contentIsShowImage) {
                         paintCenterText.setColor(this.textColorCenterIsDiscount);
-                    } else  {
+                    } else {
                         paintCenterText.setColor(this.textColorCenter);
                     }
                     canvas.drawText(contentText, drawCenterContentStart, Y, paintCenterText);
@@ -553,7 +553,7 @@ public class WheelView extends View {
                         Matrix matrix = new Matrix();
                         matrix.postScale(0.5f, 0.5f);
                         Bitmap bmp = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
-                        canvas.drawBitmap(bmp, drawCenterContentStart + width + 40, 0, paintCenterText);
+                        canvas.drawBitmap(bmp, drawCenterContentStart + width + 40, -Y / 5, paintCenterText);
                     }
 
                     int preSelectedItem = adapter.indexOf(visibles[counter]);
@@ -568,7 +568,7 @@ public class WheelView extends View {
 
                     if (contentIsShowImage) {
                         paintOuterText.setColor(this.textColorOutIsDiscount);
-                    } else  {
+                    } else {
                         paintOuterText.setColor(this.textColorOut);
                     }
                     canvas.drawText(contentText, drawOutContentStart, maxTextHeight, paintOuterText);
