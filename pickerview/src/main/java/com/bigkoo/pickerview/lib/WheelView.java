@@ -72,7 +72,7 @@ public class WheelView extends View {
 
     Typeface typeface = Typeface.MONOSPACE;//字体样式，默认是等宽字体
 
-    int textColorOutIsDiscount = 0xFFCA5D7C;
+    int textColorOutIsDiscount = 0xFFff0048;
     int textColorCenterIsDiscount = 0xFFff0048;
     int textColorOut = 0xFFa8a8a8;
     int textColorCenter = 0xFF2a2a2a;
@@ -162,7 +162,7 @@ public class WheelView extends View {
             a.recycle();//回收内存
         }
 
-        judgeLineSpae();
+        judgeLineSpace();
 
         initLoopView(context);
     }
@@ -170,7 +170,7 @@ public class WheelView extends View {
     /**
      * 判断间距是否在1.0-2.0之间
      */
-    private void judgeLineSpae() {
+    private void judgeLineSpace() {
 //        if (lineSpacingMultiplier < 1.2f) {
 //            lineSpacingMultiplier = 1.2f;
 //        } else if (lineSpacingMultiplier > 2.0f) {
@@ -862,7 +862,7 @@ public class WheelView extends View {
 
 
             this.lineSpacingMultiplier = lineSpacingMultiplier;
-            judgeLineSpae();
+            judgeLineSpace();
 
         }
     }
