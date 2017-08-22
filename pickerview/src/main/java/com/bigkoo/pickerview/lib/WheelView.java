@@ -72,6 +72,8 @@ public class WheelView extends View {
 
     Typeface typeface = Typeface.MONOSPACE;//字体样式，默认是等宽字体
 
+    int textColorOutIsDiscount = 0xFFCA5D7C;
+    int textColorCenterIsDiscount = 0xFFff0048;
     int textColorOut = 0xFFa8a8a8;
     int textColorCenter = 0xFF2a2a2a;
     int dividerColor = 0xFFd5d5d5;
@@ -149,7 +151,6 @@ public class WheelView extends View {
             CENTERCONTENTOFFSET = density * 2.5F;
         }
 
-
         if (attrs != null) {
             TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.pickerview, 0, 0);
             mGravity = a.getInt(R.styleable.pickerview_pickerview_gravity, Gravity.CENTER);
@@ -190,7 +191,6 @@ public class WheelView extends View {
         initPosition = -1;
 
         initPaints();
-
     }
 
     private void initPaints() {
@@ -206,7 +206,6 @@ public class WheelView extends View {
         paintCenterText.setTextScaleX(1.1F);
         paintCenterText.setTypeface(typeface);
         paintCenterText.setTextSize(textSize);
-
 
         paintIndicator = new Paint();
         paintIndicator.setColor(dividerColor);
@@ -486,6 +485,12 @@ public class WheelView extends View {
                     canvas.save();
                     canvas.clipRect(0, firstLineY - translateY, measuredWidth, (int) (itemHeight));
                     canvas.scale(1.0F, (float) Math.sin(radian) * 1.0F);
+
+                    if (contentIsShowImage) {
+                        paintCenterText.setColor(this.textColorCenterIsDiscount);
+                    } else  {
+                        paintCenterText.setColor(this.textColorCenter);
+                    }
                     canvas.drawText(contentText, drawCenterContentStart, maxTextHeight - CENTERCONTENTOFFSET, paintCenterText);
 
                     if (contentIsShowImage) {
@@ -509,6 +514,12 @@ public class WheelView extends View {
                     canvas.save();
                     canvas.clipRect(0, secondLineY - translateY, measuredWidth, (int) (itemHeight));
                     canvas.scale(1.0F, (float) Math.sin(radian) * SCALECONTENT);
+
+                    if (contentIsShowImage) {
+                        paintCenterText.setColor(this.textColorCenterIsDiscount);
+                    } else  {
+                        paintCenterText.setColor(this.textColorCenter);
+                    }
                     canvas.drawText(contentText, drawOutContentStart, maxTextHeight, paintOuterText);
 
                     if (contentIsShowImage) {
@@ -527,6 +538,12 @@ public class WheelView extends View {
                     //canvas.clipRect(0, 0, measuredWidth,   maxTextHeight);
                     //让文字居中
                     float Y = maxTextHeight - CENTERCONTENTOFFSET;//因为圆弧角换算的向下取值，导致角度稍微有点偏差，加上画笔的基线会偏上，因此需要偏移量修正一下
+
+                    if (contentIsShowImage) {
+                        paintCenterText.setColor(this.textColorCenterIsDiscount);
+                    } else  {
+                        paintCenterText.setColor(this.textColorCenter);
+                    }
                     canvas.drawText(contentText, drawCenterContentStart, Y, paintCenterText);
 
                     if (contentIsShowImage) {
@@ -548,6 +565,12 @@ public class WheelView extends View {
                     canvas.save();
                     canvas.clipRect(0, 0, measuredWidth, (int) (itemHeight));
                     canvas.scale(1.0F, (float) Math.sin(radian) * SCALECONTENT);
+
+                    if (contentIsShowImage) {
+                        paintOuterText.setColor(this.textColorOutIsDiscount);
+                    } else  {
+                        paintOuterText.setColor(this.textColorOut);
+                    }
                     canvas.drawText(contentText, drawOutContentStart, maxTextHeight, paintOuterText);
 
                     if (!TextUtils.isEmpty(contentText)) {
@@ -558,7 +581,7 @@ public class WheelView extends View {
                             Matrix matrix = new Matrix();
                             matrix.postScale(0.5f, 0.5f);
                             Bitmap bmp = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
-                            canvas.drawBitmap(bmp, drawOutContentStart + width + 20, 0, paintCenterText);
+                            canvas.drawBitmap(bmp, drawOutContentStart + width + 20, 0, paintOuterText);
                         }
                     }
 
