@@ -337,6 +337,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 })
                 .isDialog(true)
+                .setLineSpacingMultiplier(2.0f)
                 .build();
 
         pvCustomOptions.setPicker(cardItem);//添加数据
@@ -344,7 +345,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void getCardData() {
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 15; i++) {
             boolean isDiscount = false;
             if (i == 0 || i == 1 || i == 2 || i == 7) {
                 isDiscount = true;

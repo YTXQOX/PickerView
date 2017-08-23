@@ -480,6 +480,11 @@ public class WheelView extends View {
                     canvas.save();
                     canvas.clipRect(0, 0, measuredWidth, firstLineY - translateY);
                     canvas.scale(1.0F, (float) Math.sin(radian) * SCALECONTENT);
+                    if (contentIsShowImage) {
+                        paintOuterText.setColor(this.textColorOutIsDiscount);
+                    } else {
+                        paintOuterText.setColor(this.textColorOut);
+                    }
                     canvas.drawText(contentText, drawOutContentStart, maxTextHeight, paintOuterText);
                     canvas.restore();
                     canvas.save();
@@ -509,6 +514,11 @@ public class WheelView extends View {
                     canvas.save();
                     canvas.clipRect(0, 0, measuredWidth, secondLineY - translateY);
                     canvas.scale(1.0F, (float) Math.sin(radian) * 1.0F);
+                    if (contentIsShowImage) {
+                        paintCenterText.setColor(this.textColorCenterIsDiscount);
+                    } else {
+                        paintCenterText.setColor(this.textColorCenter);
+                    }
                     canvas.drawText(contentText, drawCenterContentStart, maxTextHeight - CENTERCONTENTOFFSET, paintCenterText);
                     canvas.restore();
                     canvas.save();
@@ -516,9 +526,9 @@ public class WheelView extends View {
                     canvas.scale(1.0F, (float) Math.sin(radian) * SCALECONTENT);
 
                     if (contentIsShowImage) {
-                        paintCenterText.setColor(this.textColorCenterIsDiscount);
+                        paintOuterText.setColor(this.textColorOutIsDiscount);
                     } else {
-                        paintCenterText.setColor(this.textColorCenter);
+                        paintOuterText.setColor(this.textColorOut);
                     }
                     canvas.drawText(contentText, drawOutContentStart, maxTextHeight, paintOuterText);
 
@@ -559,7 +569,6 @@ public class WheelView extends View {
                     int preSelectedItem = adapter.indexOf(visibles[counter]);
 
                     selectedItem = preSelectedItem;
-
                 } else {
                     // 其他条目
                     canvas.save();
